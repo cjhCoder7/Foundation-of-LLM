@@ -1,6 +1,11 @@
 # Model Structure
 
-> 这里记录的是各个模型结构的 transfomers 的源码实现。
+> 这里记录的是各个模型结构的 transformers 源码实现。
 
-为什么要参考 transfomers 的源码实现，而不是看 vllm 或者是 pytorch 直接的源码实现？
+**为什么选择参考 transformers 的源码实现，而不是 vLLM 或 PyTorch 的原生实现？**
 
+在当前的 LLM 领域中，从业人员大致可以分为两类：**算法研究员**和**Infra 工程师**。算法研究员主要关注前沿的模型架构设计、数据处理流程以及模型训练策略；而 Infra 工程师则侧重于集群管理与维护、高效的分布式训练以及模型的推理部署。
+
+在实际工作流程中，算法研究员在设计和实现模型架构时，通常不会使用 PyTorch 从零开始搭建，而是倾向于基于生态完善、使用广泛的 transformers 库进行开发。模型开发完成后，再由 Infra 工程师借助 vLLM、Megatron-LM 或 DeepSpeed 等框架进行推理优化与高效训练部署。
+
+因此，阅读 transformers 的源码实现是了解各个主流模型架构最直接、最高效的方式。
